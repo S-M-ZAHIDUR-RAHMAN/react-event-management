@@ -1,6 +1,18 @@
 
+// import { createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
+// import auth from "../../firebase/firebase.config";
+import { useContext, useState } from "react";
+import swal from "sweetalert";
+import { AuthContext } from "../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
+
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext);
+
+    const [registerError, setRegisterError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const handleRegister = e => {
         e.preventDefault();
@@ -8,6 +20,42 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(name, email, password);
+
+        //6 character validation
+        if (password.length < 6) {
+            setRegisterError('Password should be at least 6 characters');
+            return
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setRegisterError('Your password should have at least one uppercase character');
+            return;
+        }
+        // eslint-disable-next-line no-useless-escape
+        else if (!/^(?=.*[~`!@#$%^&*()--+={}\[\]|\\:;"'<>,.?/_₹]).*$/.test(password)) {
+            setRegisterError('Your password should have at least one special character');
+            return;
+        }
+
+        setRegisterError('');
+        setSuccess('');
+
+        createUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setSuccess(swal("Good job!", "User registered successfully!", "success"))
+
+                //update profile
+                updateProfile(result.user, {
+                    displayName: name,
+                })
+                .then()
+                .catch()
+                
+            })
+            .catch(error => {
+                setRegisterError(error.message);
+            })
     }
 
 
@@ -21,7 +69,7 @@ const Register = () => {
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleRegister} className="card-body bg-slate-600">
                         <div className="form-control ">
-                        <label className="label ">
+                            <label className="label ">
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Your Name" className="input input-bordered " required />
@@ -40,6 +88,17 @@ const Register = () => {
                             <input className="btn accent" type="submit" value="Register" />
                         </div>
                     </form>
+                    <div>
+                    {   
+                    registerError && <p>{registerError}</p>
+                    }
+                    <div className="hidden">
+                    {
+                    success && `${success}` 
+                    }
+                    </div>
+                    
+                </div>
                     <p className="flex justify-center bg-slate-600">Already have an account? Please go to <span className="text-blue-700 underline"><Link to="/login">Login</Link></span></p>
                 </div>
             </div>

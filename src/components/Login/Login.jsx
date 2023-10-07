@@ -1,13 +1,56 @@
 
+// import { signInWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
+// import auth from "../../firebase/firebase.config";
+import swal from "sweetalert";
+import { useContext, useState } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 const Login = () => {
+
+    const {signInUser} = useContext(AuthContext);
+
+    const [registerLoginError, setRegisterLoginError] = useState('');
+    const [successLogin, setSuccessLogin] = useState('');
+
     
     const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password);
+
+
+        setRegisterLoginError('');
+        setSuccessLogin('');
+
+        signInUser(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setSuccessLogin(swal("Good job!", "User logged in successfully!", "success"))
+                
+            })
+            .catch(error => {
+                setRegisterLoginError(error.message);
+            })
     }
+    //Google
+    const provider = new GoogleAuthProvider();
+    const handleGoogleSignIn =()=>{
+        signInWithPopup(auth, provider)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            setSuccessLogin(swal("Good job!", "User logged in successfully!", "success"))
+            
+        })
+        .catch(error => {
+            setRegisterLoginError(error.message);
+        })
+    }
+
 
 
     return (
@@ -35,6 +78,19 @@ const Login = () => {
                             <input className="btn accent" type="submit" value="Login" />
                         </div>
                     </form>
+                    <div className="flex justify-center">
+                        <button className="btn accent" onClick={handleGoogleSignIn}>Google Sign in</button>
+                    </div>
+                    <div>
+                    {   
+                    registerLoginError && <p>{registerLoginError}</p>
+                    }
+                    <div className="hidden">
+                    {
+                    successLogin && `${successLogin}` 
+                    }
+                    </div>
+                </div>
                     <p className="flex justify-center">Yet to open an Account ? Please go to <span className="text-blue-700 underline"><Link to="/register">Register</Link></span></p>
                 </div>
             </div>

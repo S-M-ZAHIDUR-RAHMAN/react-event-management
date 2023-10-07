@@ -1,12 +1,23 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
+import swal from "sweetalert";
 
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(swal("Good job!", "User Logged out successfully!", "success"))
+            .catch()
+    }
 
     const navLinks = <div className="lg:flex">
-            <li><NavLink to="/">Home</NavLink></li>
-            <li><NavLink to="/register">Register</NavLink></li>
-            <li><NavLink to="/login">Login</NavLink></li>
+        <li><NavLink to="/">Home</NavLink></li>
+        <li><NavLink to="/register">Register</NavLink></li>
+        <li><NavLink to="/login">Login</NavLink></li>
     </div>
 
     return (
@@ -29,7 +40,17 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Sign Out</a>
+                    {
+                        user ? <div className="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                            <span className="w-10"><img className="rounded-full" src={`${user.photoURL}`} alt="" /></span>
+                            <span className="text-white font-semibold bg-black">{user.displayName}</span>
+                            <a onClick={handleLogOut} className="btn">Log out</a>
+                        </div>
+                        : <Link to="/login" className="btn">Log in</Link>
+                    }
+
+
+
                 </div>
             </div>
         </div>
