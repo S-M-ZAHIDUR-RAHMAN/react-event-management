@@ -13,16 +13,20 @@ import AuthProvider from './components/providers/AuthProvider';
 import TicketBooking from './components/TicketBooking/TicketBooking';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import WishList from './components/WishList/WishList';
+import ErrorPage from './components/ErrorPage/ErrorPage';
+import Description from './components/Description/Description';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: () => fetch('/store.json')
       },
       {
         path: "/register",
@@ -39,6 +43,11 @@ const router = createBrowserRouter([
       {
         path: "/wishList",
         element: <PrivateRoute><WishList></WishList></PrivateRoute>
+      },
+      {
+        path: "/services/:id",
+        element: <PrivateRoute><Description></Description></PrivateRoute>,
+        loader: () => fetch('/store.json')
       }
     ]
   },

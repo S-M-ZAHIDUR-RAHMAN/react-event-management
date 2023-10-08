@@ -47,7 +47,7 @@ const Login = () => {
             const user = result.user;
             console.log(user);
             setSuccessLogin(swal("Good job!", "User logged in successfully!", "success"))
-            
+            navigate('/')
         })
         .catch(error => {
             setRegisterLoginError(error.message);

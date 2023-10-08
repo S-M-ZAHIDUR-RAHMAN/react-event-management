@@ -21,7 +21,7 @@ const NavBar = () => {
         {
             user && <>
                 <li><NavLink to="/ticketBooking">Ticket Booking</NavLink></li>
-                <li><NavLink to="/wishList">Wishlist</NavLink></li>
+                <li><NavLink to="/wishList">Hire us/Wishlist</NavLink></li>
             </>
         }
     </div>
@@ -47,9 +47,9 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <div className="flex flex-col lg:flex-row lg:items-center lg:gap-2">
+                        user ? <div className="flex flex-col items-center lg:flex-row lg:items-center lg:gap-2">
                             <span className="w-10"><img className="rounded-full" src={`${user.photoURL}`} alt="" /></span>
-                            <span className="text-white font-semibold px-1 rounded-md shadow-2xl bg-black">{user.displayName}</span>
+                            <span className="text-white w-20 flex-wrap font-semibold px-1 rounded-md shadow-2xl bg-black lg:w-auto">{user.displayName}</span>
                             <a onClick={handleLogOut} className="btn">Log out</a>
                         </div>
                             : <Link to="/login" className="btn">Log in</Link>
