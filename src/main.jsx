@@ -10,6 +10,9 @@ import Home from './components/Home/Home';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import AuthProvider from './components/providers/AuthProvider';
+import TicketBooking from './components/TicketBooking/TicketBooking';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import WishList from './components/WishList/WishList';
 
 
 const router = createBrowserRouter([
@@ -29,6 +32,14 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login></Login>
       },
+      {
+        path: "/ticketBooking",
+        element: <PrivateRoute><TicketBooking></TicketBooking></PrivateRoute>
+      },
+      {
+        path: "/wishList",
+        element: <PrivateRoute><WishList></WishList></PrivateRoute>
+      }
     ]
   },
 ]);

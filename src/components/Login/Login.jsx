@@ -1,6 +1,6 @@
 
 // import { signInWithEmailAndPassword } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import auth from "../../firebase/firebase.config";
 import swal from "sweetalert";
 import { useContext, useState } from "react";
@@ -10,6 +10,7 @@ import auth from "../../firebase/firebase.config";
 const Login = () => {
 
     const {signInUser} = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const [registerLoginError, setRegisterLoginError] = useState('');
     const [successLogin, setSuccessLogin] = useState('');
@@ -30,6 +31,8 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 setSuccessLogin(swal("Good job!", "User logged in successfully!", "success"))
+                e.target.reset();
+                navigate('/')
                 
             })
             .catch(error => {
@@ -78,9 +81,6 @@ const Login = () => {
                             <input className="btn accent" type="submit" value="Login" />
                         </div>
                     </form>
-                    <div className="flex justify-center">
-                        <button className="btn accent" onClick={handleGoogleSignIn}>Google Sign in</button>
-                    </div>
                     <div>
                     {   
                     registerLoginError && <p>{registerLoginError}</p>
@@ -92,7 +92,11 @@ const Login = () => {
                     </div>
                 </div>
                     <p className="flex justify-center">Yet to open an Account ? Please go to <span className="text-blue-700 underline"><Link to="/register">Register</Link></span></p>
+                    <div className="flex justify-center">
+                        <button className="btn accent" onClick={handleGoogleSignIn}>Google Sign in</button>
+                    </div>
                 </div>
+                
             </div>
         </div>
     );

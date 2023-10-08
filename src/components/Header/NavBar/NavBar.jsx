@@ -18,6 +18,12 @@ const NavBar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/register">Register</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
+        {
+            user && <>
+                <li><NavLink to="/ticketBooking">Ticket Booking</NavLink></li>
+                <li><NavLink to="/wishList">Wishlist</NavLink></li>
+            </>
+        }
     </div>
 
     return (
@@ -43,10 +49,10 @@ const NavBar = () => {
                     {
                         user ? <div className="flex flex-col lg:flex-row lg:items-center lg:gap-2">
                             <span className="w-10"><img className="rounded-full" src={`${user.photoURL}`} alt="" /></span>
-                            <span className="text-white font-semibold bg-black">{user.displayName}</span>
+                            <span className="text-white font-semibold px-1 rounded-md shadow-2xl bg-black">{user.displayName}</span>
                             <a onClick={handleLogOut} className="btn">Log out</a>
                         </div>
-                        : <Link to="/login" className="btn">Log in</Link>
+                            : <Link to="/login" className="btn">Log in</Link>
                     }
 
 
