@@ -57,9 +57,9 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-slate-500">
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/4Pm53yS/env2.jpg)' }}>
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
+                <div className="text-center text-white lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
                     <p className="py-6">You can login here and then get access to our awesome event services.</p>
                 </div>

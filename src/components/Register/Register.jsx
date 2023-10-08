@@ -60,16 +60,16 @@ const Register = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-slate-500">
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/4Pm53yS/env2.jpg)' }}>
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
+                <div className="text-center text-white lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>
                     <p className="py-6">You can register here and then get access to our awesome event services.</p>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-                    <form onSubmit={handleRegister} className="card-body bg-slate-600">
+                    <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control ">
-                            <label className="label ">
+                            <label className="label">
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Your Name" className="input input-bordered " required />
@@ -99,7 +99,7 @@ const Register = () => {
                     </div>
                     
                 </div>
-                    <p className="flex justify-center bg-slate-600">Already have an account? Please go to <span className="text-blue-700 underline"><Link to="/login">Login</Link></span></p>
+                    <p className="flex justify-center pb-4">Already have an account? Please go to <span className="text-blue-700 underline"><Link to="/login">Login</Link></span></p>
                 </div>
             </div>
         </div>

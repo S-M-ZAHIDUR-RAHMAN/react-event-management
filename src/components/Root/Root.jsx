@@ -6,12 +6,14 @@ import Footer from "../Footer/Footer";
 
 const Root = () => {
     return (
-        <div className="bg-slate-500">
+        <div>
             <NavBar></NavBar>
-            <Outlet></Outlet>
+            <div style={{ backgroundImage: 'url(https://i.ibb.co/4Pm53yS/env2.jpg)' }}>
+                <Outlet></Outlet>
+            </div>
             <Footer></Footer>
         </div>
-        
+
 
     );
 };

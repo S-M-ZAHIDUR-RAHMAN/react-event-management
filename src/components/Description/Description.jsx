@@ -20,10 +20,10 @@ const Description = () => {
         }
 
     return (
-        <div className="flex flex-col p-5 text-white">
+        <div className="flex flex-col pl-5 pr-5 pb-5 text-white">
             <div className="hero min-h-[50vh] flex flex-col rounded-md justify-end" style={detailsImageStyle}>
                 <div className="w-full bg-opacity-60">
-                    <div className="hero-overlay text-3xl font-bold underline pl-5 py-5">
+                    <div className="hero-overlay animate-bounce text-3xl font-bold underline pl-5 py-5">
                         {detailDescription?.title}
                     </div>
                 </div>

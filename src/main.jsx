@@ -15,6 +15,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import WishList from './components/WishList/WishList';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Description from './components/Description/Description';
+import OurPortfolio from './components/Portfolio/OurPortfolio';
 
 
 const router = createBrowserRouter([
@@ -38,7 +39,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/ticketBooking",
-        element: <PrivateRoute><TicketBooking></TicketBooking></PrivateRoute>
+        element: <PrivateRoute><TicketBooking></TicketBooking></PrivateRoute>,
+        loader: () => fetch('/store.json')
       },
       {
         path: "/wishList",
@@ -47,6 +49,11 @@ const router = createBrowserRouter([
       {
         path: "/services/:id",
         element: <PrivateRoute><Description></Description></PrivateRoute>,
+        loader: () => fetch('/store.json')
+      },
+      {
+        path: "/ourPortfolio",
+        element: <OurPortfolio></OurPortfolio>,
         loader: () => fetch('/store.json')
       }
     ]

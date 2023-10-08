@@ -2,6 +2,7 @@
     {
       "id": 1,
       "title": "Concerts & Music",
+      "title_book": "NagarBaul",
       "image": "https://i.ibb.co/xJhHZg0/Concert.jpg",
       "short_description": "Live music events featuring top artists.",
       "long_description": "Experience the magic of live music with our Concerts & Music events. Immerse yourself in the soulful melodies of renowned artists from various genres. Whether you're a fan of rock, pop, classical, or electronic music, we have something for everyone. Our carefully curated lineup ensures an unforgettable musical journey for all attendees.From intimate acoustic sessions to grand stadium performances, our events cater to diverse musical tastes. Witness the raw energy of live performances and connect with fellow music enthusiasts. Feel the beat pulsating through your veins as you dance and sing along with the crowd.In addition to established headliners, we also feature emerging talents, providing a platform for up-and-coming artists to showcase their skills. Join us for an evening filled with rhythm, harmony, and a shared love for music.Don't miss out on this opportunity to be a part of a musical experience that will leave you with lasting memories.",
@@ -14,6 +15,7 @@
     {
       "id": 2,
       "title": "Theater",
+      "title_book": "Aaj Himur Biye",
       "image": "https://i.ibb.co/f8N9ZNd/Theater.jpg",
       "short_description": "Captivating stage performances by talented actors.",
       "long_description": "Step into a world of drama, comedy, and emotion with our Theater events. Our carefully curated productions bring timeless stories to life on stage, showcasing the immense talent of our actors. Whether you're a fan of classic plays or contemporary works, our diverse repertoire promises something for everyone.Experience the thrill of live performances, where every gesture, every line, and every expression carries the power to captivate the audience. Our theaters provide an intimate setting, allowing you to immerse yourself in the world of the play.From Shakespearean tragedies to modern experimental pieces, our productions push the boundaries of storytelling, leaving audiences both moved and inspired. Join us for an evening of theatrical brilliance and witness the magic of live performance.Book your tickets now for an unforgettable night at the theater.",
@@ -26,6 +28,7 @@
     {
       "id": 3,
       "title": "Film Premieres",
+      "title_book": "Mission Impossible 9",
       "image": "https://i.ibb.co/C6Y9kjT/Film-premiere.jpg",
       "short_description": "Exclusive screenings of highly anticipated films.",
       "long_description": "Be among the first to witness cinematic brilliance with our Film Premieres events. We bring you exclusive screenings of highly anticipated films before they hit theaters. Immerse yourself in the world of storytelling through the lens of visionary filmmakers.From gripping dramas to heart-pounding action sequences, our film selection spans across genres, catering to diverse cinematic tastes. Experience the magic of the silver screen in a premiere setting, surrounded by fellow film enthusiasts.Our Film Premieres events provide a unique opportunity to engage with the creative minds behind the films. Q&A sessions with directors, actors, and crew members offer insight into the artistic process and the stories that shape the screen.Don't miss your chance to be a part of cinematic history. Book your tickets now and be a part of the exclusive audience at our Film Premieres.",
@@ -38,6 +41,7 @@
     {
       "id": 4,
       "title": "Comedy Shows",
+      "title_book": "Stand-up of Navid Mahmud",
       "image": "https://i.ibb.co/z7FzXq5/Comedy.jpg",
       "short_description": "Laughs and entertainment with top comedians.",
       "long_description": "Get ready for a night of uproarious laughter with our Comedy Shows events. We bring you top-notch comedians who will have you in stitches with their wit and humor. Whether you enjoy observational humor, stand-up, or improve, our lineup has something to tickle every funny bone.Our comedy events promise an evening of lighthearted entertainment and a break from the routine. Join us for a laughter-filled night that will leave you with aching cheeks and a heart full of joy.In addition to established comedians, we also showcase rising stars in the comedy scene, providing a platform for fresh talent to shine. So grab your tickets and get ready to chuckle the night away with us.",
@@ -50,6 +54,7 @@
     {
       "id": 5,
       "title": "Sports Events",
+      "title_book": "Dhaka Trithelon",
       "image": "https://i.ibb.co/9gsnm8R/Sports.jpg",
       "short_description": "Thrilling sports action and competitive spirit.",
       "long_description": "Experience the adrenaline-pumping excitement of live sports with our Sports Events. Whether you're a die-hard fan or a casual observer, our events offer a front-row seat to the action-packed world of athletics. From heart-stopping finishes to awe-inspiring displays of skill, our sports events are sure to leave you on the edge of your seat.Cheer for your favorite teams and athletes as they battle it out for glory and victory. Feel the energy of the crowd as the stadium comes alive with every play. Our events cover a wide range of sports, from football and basketball to tennis and beyond.In addition to professional leagues, we also feature exhibition matches and special events, providing a diverse sports experience for all enthusiasts. Don't miss the chance to be a part of the live sports action. Get your tickets now!",
@@ -62,6 +67,7 @@
     {
       "id": 6,
       "title": "Exhibitions",
+      "title_book": "Exhibition by GMB Akash",
       "image": "https://i.ibb.co/W54V6Fn/Exhibition.jpg",
       "short_description": "Immerse yourself in art, culture, and innovation.",
       "long_description": "Embark on a journey of artistic exploration with our Exhibitions events. Immerse yourself in a world of creativity, culture, and innovation. Our exhibitions feature a diverse range of art forms, from traditional paintings and sculptures to cutting-edge installations and interactive experiences.Walk through curated galleries and discover the vision and creativity of talented artists. Engage with thought-provoking installations that challenge the boundaries of artistic expression. Our exhibitions provide a platform for both established artists and emerging talents to showcase their work.In addition to visual arts, our events also delve into cultural heritage, technological advancements, and societal issues. Join us for an enriching experience that celebrates the power of creativity to inspire and provoke.Book your tickets now and be a part of an immersive journey through the world of art and culture.",

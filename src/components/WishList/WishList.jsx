@@ -2,7 +2,7 @@
 
 const WishList = () => {
     return (
-        <div className="w-auto text-white flex flex-col lg:flex lg:flex-row lg:justify-center">
+        <div className="w-auto py-10 text-white flex flex-col lg:flex lg:flex-row lg:justify-center">
             <div className="text-3xl flex flex-col items-center justify-center p-6">
                 <h2>Hire us</h2>
                 <h2 className="my-5">Or,</h2>
