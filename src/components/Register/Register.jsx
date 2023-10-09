@@ -12,7 +12,7 @@ import 'aos/dist/aos.css';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, logOut} = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
@@ -54,7 +54,8 @@ const Register = () => {
                 })
                 .then()
                 .catch()
-                
+
+                logOut();
             })
             .catch(error => {
                 setRegisterError(error.message);

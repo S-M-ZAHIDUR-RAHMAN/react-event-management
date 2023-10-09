@@ -10,6 +10,7 @@ import auth from "../../firebase/firebase.config";
 import { useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
 const Login = () => {
 
     const {signInUser} = useContext(AuthContext);
@@ -33,8 +34,8 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                setSuccessLogin(swal("Good job!", "User logged in successfully!", "success"))
-                e.target.reset();
+                setSuccessLogin(swal("User logged in successfully!"))
+                // e.target.reset();
                 navigate('/')
                 
             })
@@ -47,7 +48,7 @@ const Login = () => {
     const handleGoogleSignIn =()=>{
         signInWithPopup(auth, provider)
         .then(result => {
-            const user = result.user;
+            const user = result?.user;
             console.log(user);
             setSuccessLogin(swal("User logged in successfully!"))
             navigate('/')

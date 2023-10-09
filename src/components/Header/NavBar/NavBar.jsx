@@ -22,8 +22,7 @@ const NavBar = () => {
                 <li><NavLink to="/ticketBooking">Ticket Booking</NavLink></li>
                 <li><NavLink to="/wishList">Hire us/Wishlist</NavLink></li>
             </>
-                :
-                <>
+                : <>
                     <li><NavLink to="/register">Register</NavLink></li>
                     <li><NavLink to="/login">Login</NavLink></li>
                 </>
@@ -55,7 +54,7 @@ const NavBar = () => {
                     {
                         user ? <div className="flex flex-col items-center lg:flex-row lg:items-center lg:gap-2 md:flex-row md:gap-2">
                             <span className="w-10"><img className="rounded-full" src={`${user.photoURL}`} alt="" /></span>
-                            <span className="text-white w-20 md:w-auto flex-wrap font-semibold px-1 rounded-md shadow-2xl bg-black lg:w-auto">{user.displayName}</span>
+                            <span className="text-white w-20 md:w-auto flex-wrap font-semibold px-1 rounded-md shadow-2xl bg-black lg:w-auto">{user?.displayName}</span>
                             <a onClick={handleLogOut} className="btn accent bg-yellow-400">Log out</a>
                         </div>
                             : <Link to="/login" className="btn accent bg-yellow-400">Log in</Link>
