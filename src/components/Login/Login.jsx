@@ -7,6 +7,9 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 const Login = () => {
 
     const {signInUser} = useContext(AuthContext);
@@ -54,10 +57,12 @@ const Login = () => {
         })
     }
 
-
+    useEffect(() => {
+        AOS.init();
+      }, []);
 
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/4Pm53yS/env2.jpg)' }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/4Pm53yS/env2.jpg)' }} data-aos="slide-up" data-aos-anchor-placement="top-center"data-aos-duration="linear">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center text-white lg:text-left">
                     <h1 className="text-5xl font-bold">Login now!</h1>
@@ -78,7 +83,7 @@ const Login = () => {
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn accent" type="submit" value="Login" />
+                            <input className="btn accent bg-yellow-400" type="submit" value="Login" />
                         </div>
                     </form>
                     <div>
@@ -92,8 +97,8 @@ const Login = () => {
                     </div>
                 </div>
                     <p className="flex justify-center">Yet to open an Account ? Please go to <span className="text-blue-700 underline"><Link to="/register">Register</Link></span></p>
-                    <div className="flex justify-center">
-                        <button className="btn accent" onClick={handleGoogleSignIn}>Google Sign in</button>
+                    <div className="flex justify-center pb-2">
+                        <button className="btn accent bg-yellow-400" onClick={handleGoogleSignIn}>Google Sign in</button>
                     </div>
                 </div>
                 

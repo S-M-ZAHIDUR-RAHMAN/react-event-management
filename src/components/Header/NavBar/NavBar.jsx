@@ -44,7 +44,7 @@ const NavBar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                    <div className="normal-case text-white rounded-full py-1 px-4 text-xl font-extrabold bg-black"><span className="text-yellow-300">Elegant</span>Events</div>
+                    <div className="normal-case text-white rounded-full py-1 px-4 text-xl font-extrabold bg-black animate-bounce"><span className="text-yellow-300">Elegant</span>Events</div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -56,9 +56,9 @@ const NavBar = () => {
                         user ? <div className="flex flex-col items-center lg:flex-row lg:items-center lg:gap-2 md:flex-row md:gap-2">
                             <span className="w-10"><img className="rounded-full" src={`${user.photoURL}`} alt="" /></span>
                             <span className="text-white w-20 md:w-auto flex-wrap font-semibold px-1 rounded-md shadow-2xl bg-black lg:w-auto">{user.displayName}</span>
-                            <a onClick={handleLogOut} className="btn">Log out</a>
+                            <a onClick={handleLogOut} className="btn accent bg-yellow-400">Log out</a>
                         </div>
-                            : <Link to="/login" className="btn">Log in</Link>
+                            : <Link to="/login" className="btn accent bg-yellow-400">Log in</Link>
                     }
 
 

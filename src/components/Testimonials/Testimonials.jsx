@@ -1,24 +1,29 @@
-
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from 'aos';
 
 const Testimonials = () => {
+    useEffect(() => {
+        AOS.init();
+      }, []);
     return (
         <div>
             <div>
-                <h2 className="flex justify-center text-4xl text-white font-bold my-8 lg:my-10">Testimonials</h2>
+                <h2 className="flex justify-center text-4xl text-white font-bold my-8 lg:my-10" data-aos="slide-right" data-aos-anchor-placement="top-center"data-aos-duration="600">Testimonials</h2>
             </div>
 
-            <div className="carousel h-[95vh] w-full">
+            <div className="carousel h-[95vh] w-full" data-aos="slide-left" data-aos-anchor-placement="top-center"data-aos-duration="600">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://i.ibb.co/VtVNBh8/Concert1.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform lg:gap-20 -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide4" className="btn btn-circle">❮</a>
+                        <a href="#slide4" className="btn btn-circle bg-yellow-400">❮</a>
                         <div className="text-white lg:font-bold lg:text-2xl hero-overlay p-1 rounded-md">
                             <h2>
                                 "Attending the concert organized by ElegantEvents was an absolute delight. The seamless coordination and attention to detail brought satisfaction. Tahsan's performance was electrifying. It was a night to remember!"
                             </h2>
                             <p className="lg:mt-4">- Sarah J., Dhaka, Bangladesh</p>
                         </div>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
+                        <a href="#slide2" className="btn btn-circle bg-yellow-400">❯</a>
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">

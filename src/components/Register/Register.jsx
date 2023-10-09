@@ -6,6 +6,9 @@ import { useContext, useState } from "react";
 import swal from "sweetalert";
 import { AuthContext } from "../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Register = () => {
 
@@ -57,10 +60,13 @@ const Register = () => {
                 setRegisterError(error.message);
             })
     }
+    useEffect(() => {
+        AOS.init();
+      }, []);
 
 
     return (
-        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/4Pm53yS/env2.jpg)' }}>
+        <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/4Pm53yS/env2.jpg)' }} data-aos="slide-up" data-aos-anchor-placement="top-center"data-aos-duration="linear">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center text-white lg:text-left">
                     <h1 className="text-5xl font-bold">Register now!</h1>
@@ -85,7 +91,7 @@ const Register = () => {
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-0">
-                            <input className="btn accent" type="submit" value="Register" />
+                            <input className="btn accent bg-yellow-400" type="submit" value="Register" />
                         </div>
                     </form>
                     <div>
@@ -99,7 +105,7 @@ const Register = () => {
                     </div>
                     
                 </div>
-                    <p className="flex justify-center pb-4">Already have an account? Please go to <span className="text-blue-700 underline"><Link to="/login">Login</Link></span></p>
+                    <p className="flex justify-center pb-4">Already have an account? Please go to <span className="text-blue-700 underline"><Link to="/login"> Login</Link></span></p>
                 </div>
             </div>
         </div>

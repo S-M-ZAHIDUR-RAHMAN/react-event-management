@@ -6,10 +6,10 @@ const Footer = () => {
     
     <div className="normal-case text-white rounded-full py-1 px-4 text-xl font-extrabold bg-black"><span className="text-yellow-300">Elegant</span>Events</div>
     <div className="flex flex-col justify-around gap-2 rounded-lg border border-red-500 p-5 lg:rounded-full bg-slate-700 lg:flex lg:flex-row lg:justify-around lg:gap-6">
-        <Link to="/"><button className="btn accent">Home</button></Link>
-        <Link to="/ourPortfolio"><button className="btn accent">Our Portfolio</button></Link>
-        <Link to="/ticketBooking"><button className="btn accent">Ticket Booking</button></Link>
-        <Link to="/wishList"><button className="btn accent">Hire us/Wishlist</button></Link>
+        <Link to="/"><button className="btn accent bg-yellow-400">Home</button></Link>
+        <Link to="/ourPortfolio"><button className="btn accent bg-yellow-400">Our Portfolio</button></Link>
+        <Link to="/ticketBooking"><button className="btn  bg-yellow-400">Ticket Booking</button></Link>
+        <Link to="/wishList"><button className="btn  bg-yellow-400">Hire us/Wishlist</button></Link>
     </div>
     <p>Copyright © 2023 - All right reserved to S M Zahidur Rahman</p>
   </aside> 
