@@ -1,5 +1,5 @@
-Website Name:
-Website Link:
+Website Name: ElegantEvents (react-event-management)
+Website Link: https://react-event-management-7fad6.web.app/
 
 
 features: 
