@@ -43,7 +43,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                setSuccess(swal("Good job!", "User registered successfully!", "success"))
+                setSuccess(swal("User registered successfully!"))
 
                 //update profile
                 updateProfile(result.user, {
@@ -84,7 +84,7 @@ const Register = () => {
                             </label>
                             <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                         </div>
-                        <div className="form-control mt-6">
+                        <div className="form-control mt-0">
                             <input className="btn accent" type="submit" value="Register" />
                         </div>
                     </form>

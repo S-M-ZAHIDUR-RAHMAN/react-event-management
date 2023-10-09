@@ -46,7 +46,7 @@ const Login = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
-            setSuccessLogin(swal("Good job!", "User logged in successfully!", "success"))
+            setSuccessLogin(swal("User logged in successfully!"))
             navigate('/')
         })
         .catch(error => {

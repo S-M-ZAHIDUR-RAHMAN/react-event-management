@@ -1,10 +1,22 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import NavBar from "../Header/NavBar/NavBar";
 import Footer from "../Footer/Footer";
+import { useEffect } from "react";
 
 
 
 const Root = () => {
+    const locationPage = useLocation()
+
+    useEffect(()=> {
+        if(locationPage.pathname==="/"){
+            document.title = `ElegantEvents - Home`
+        }
+        else{
+            document.title = `ElegantEvents ${locationPage.pathname.replace("/",'- ')}`
+        }
+        
+    },[locationPage.pathname])
     return (
         <div>
             <NavBar></NavBar>

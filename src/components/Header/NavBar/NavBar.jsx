@@ -10,7 +10,7 @@ const NavBar = () => {
 
     const handleLogOut = () => {
         logOut()
-            .then(swal("Good job!", "User Logged out successfully!", "success"))
+            .then(swal("User Logged out successfully!"))
             .catch()
     }
 
@@ -18,14 +18,18 @@ const NavBar = () => {
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/ourPortfolio">Our Portfolio</NavLink></li>
         {
-            user && <>
+            user ? <>
                 <li><NavLink to="/ticketBooking">Ticket Booking</NavLink></li>
                 <li><NavLink to="/wishList">Hire us/Wishlist</NavLink></li>
             </>
+                :
+                <>
+                    <li><NavLink to="/register">Register</NavLink></li>
+                    <li><NavLink to="/login">Login</NavLink></li>
+                </>
         }
-        <li><NavLink to="/register">Register</NavLink></li>
-        <li><NavLink to="/login">Login</NavLink></li>
-       
+
+
     </div>
 
     return (
@@ -49,9 +53,9 @@ const NavBar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user ? <div className="flex flex-col items-center lg:flex-row lg:items-center lg:gap-2">
+                        user ? <div className="flex flex-col items-center lg:flex-row lg:items-center lg:gap-2 md:flex-row md:gap-2">
                             <span className="w-10"><img className="rounded-full" src={`${user.photoURL}`} alt="" /></span>
-                            <span className="text-white w-20 flex-wrap font-semibold px-1 rounded-md shadow-2xl bg-black lg:w-auto">{user.displayName}</span>
+                            <span className="text-white w-20 md:w-auto flex-wrap font-semibold px-1 rounded-md shadow-2xl bg-black lg:w-auto">{user.displayName}</span>
                             <a onClick={handleLogOut} className="btn">Log out</a>
                         </div>
                             : <Link to="/login" className="btn">Log in</Link>

@@ -9,7 +9,7 @@ const TicketBooking = () => {
         <div className="mx-auto pt-10">
             <div className="flex flex-col items-center justify-center gap-4">
                 <h2 className="text-white">Please select one payment method first</h2>
-                <div className="flex flex-col gap-3 lg:flex lg:flex-row">
+                <div className="flex flex-col gap-3 md:flex md:flex-row lg:flex lg:flex-row">
                     <button className="btn accent">Visa</button>
                     <button className="btn accent">MasterCard</button>
                     <button className="btn accent">PayPal</button>
@@ -17,7 +17,7 @@ const TicketBooking = () => {
                     <button className="btn accent">Amazon Pay</button>
                 </div>
             </div>
-            <div className="px-28 py-10 grid grid-cols-1 lg:grid lg:grid-cols-3">
+            <div className="px-28 py-10 grid grid-cols-1 md:grid md:grid-cols-2 md:gap-20 lg:grid lg:grid-cols-3">
                 {
                     ticketBooking?.map(ticket=><TicketCards key={ticket.id} ticket={ticket}></TicketCards>)
                 }

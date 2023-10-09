@@ -3,7 +3,7 @@
 const WishList = () => {
     return (
         <div className="w-auto py-10 text-white flex flex-col lg:flex lg:flex-row lg:justify-center">
-            <div className="text-3xl flex flex-col items-center justify-center p-6">
+            <div className="text-3xl font-bold animate-bounce flex flex-col items-center justify-center p-6">
                 <h2>Hire us</h2>
                 <h2 className="my-5">Or,</h2>
                 <h2>Wish a pre-booking</h2>
@@ -12,7 +12,7 @@ const WishList = () => {
             <form className="flex flex-col gap-2">
                 <div className="flex flex-col mx-10 border border-white rounded-md p-2">
                     <label>Phone number</label>
-                    <input className="rounded-md pl-2 bg-orange-500" type="text" placeholder="Your phone number" name="phone" id="" />
+                    <input className="rounded-md pl-2 bg-orange-500" type="text" placeholder="" name="phone" id="" />
                 </div>
                 <div className="flex flex-col mx-10 border border-white rounded-md p-2">
                     <label>Program name and type</label>
